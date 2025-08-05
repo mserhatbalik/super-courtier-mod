@@ -1,0 +1,40 @@
+super_courtier_decision_group = {
+	major = yes # This makes it appear as a major decision category.
+	
+	super_courtier_decision = {
+		major = no # The decision itself is minor.
+		icon = "gfx/interface/icons/decision_icons/decision_invite_claimant.dds" # Using a vanilla icon for simplicity.
+
+		# This section determines who can see the decision.
+		is_shown = {
+			is_ai = no      # We don't want the AI to see or use this.
+			is_ruler = yes  # Only rulers can take it.
+		}
+
+		# This section determines if the decision can be clicked.
+		is_valid = {
+			# We add a check here to see if the player has a "cooldown" modifier.
+			# If they have the modifier, they cannot take the decision again until it expires.
+			NOT = { has_character_modifier = super_courtier_cooldown_modifier }
+		}
+		
+		# This section defines what happens when the decision is taken.
+		effect = {
+			# This adds a description to the confirmation pop-up.
+			custom_description = {
+				text = super_courtier_decision_effect_desc
+			}
+			# This is a hidden effect that triggers our event.
+			hidden_effect = {
+				new_character_event = {
+					event = super_courtier.0001
+				}
+			}
+		}
+
+		# This tells the AI to never take this decision.
+		ai_will_do = {
+			base = 0
+		}
+	}
+}

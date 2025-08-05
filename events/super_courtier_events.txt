@@ -1,0 +1,90 @@
+namespace = super_courtier # A unique namespace prevents conflicts with other mods.
+
+# Event ID: super_courtier.0001
+super_courtier.0001 = {
+	type = character
+	title = super_courtier.0001.t # Localization key for the event title
+	desc = super_courtier.0001.desc # Localization key for the event description
+	
+	theme = "upbringing_theme" # A generic visual theme for the event window
+	
+	left_portrait = {
+		character = root # The player character
+	}
+
+	# Option 1: The Diplomat
+	option = {
+		name = super_courtier.0001.a # Localization key for the first option button
+		
+		# This block creates the character with the specified attributes.
+		create_character = {
+			name = random
+			dynasty = none # No dynasty, making them a lowborn.
+			religion = root.religion
+			culture = root.culture
+			female = random
+			age = { 20 30 }
+			
+			# Set base skills
+			diplomacy = 10
+			martial = 10
+			stewardship = 10
+			intrigue = 10
+			learning = 10
+			
+			# Add education and personality traits
+			education = diplomacy_education_4 # Virtuoso Arbitrator
+			add_trait = gregarious
+			add_trait = forgiving
+			add_trait = compassionate
+			add_trait = generous
+			
+			# Add congenital traits
+			add_trait = genius
+			add_trait = beautiful_1 # beautiful
+			add_trait = herculean_1 # herculean
+		}
+		
+		# This block takes the newly created character and moves them to your court.
+		newly_created_character = {
+			spawn_in_character_court = root
+		}
+	}
+
+	# Option 2: The Steward
+	option = {
+		name = super_courtier.0001.b # Localization key for the second option button
+		
+		create_character = {
+			name = random
+			dynasty = none
+			religion = root.religion
+			culture = root.culture
+			female = random
+			age = { 20 30 }
+			
+			# Set base skills
+			diplomacy = 10
+			martial = 10
+			stewardship = 10
+			intrigue = 10
+			learning = 10
+			
+			# Add education and personality traits
+			education = stewardship_education_4 # Golden Sovereign
+			add_trait = diligent
+			add_trait = just
+			add_trait = temperate
+			add_trait = stubborn
+			
+			# Add congenital traits
+			add_trait = genius
+			add_trait = beautiful_1 # beautiful
+			add_trait = herculean_1 # herculean
+		}
+		
+		newly_created_character = {
+			spawn_in_character_court = root
+		}
+	}
+}
