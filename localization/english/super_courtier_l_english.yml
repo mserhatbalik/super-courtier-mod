@@ -1,19 +1,12 @@
-# /localization/english/super_courtier_l_english.yml
-l_english:
- # Decision
- super_courtier_decision_group: "Courtier Decisions"
+﻿l_english:
  super_courtier_decision: "Summon a Super Courtier"
  super_courtier_decision_desc: "Through means both arcane and mundane, I can call forth a person of exceptional talent to serve my realm. Their loyalty and skills will be a great asset, but such power should not be used lightly."
  super_courtier_decision_tooltip: "This will trigger an event to create a powerful new courtier."
  super_courtier_decision_confirm: "Call them forth"
  super_courtier_decision_effect_desc: "An event will follow, allowing you to choose the nature of the courtier who answers your call."
 
- # Event
+ # Event Text
  super_courtier.0001.t: "A Promising Arrival"
  super_courtier.0001.desc: "Your call has been answered. A figure of remarkable potential stands before you, awaiting your command. They seem malleable, ready to be shaped into a paragon of either diplomatic grace or administrative genius. How will you guide their destiny?"
  super_courtier.0001.a: "We need a master of statecraft and charm."
  super_courtier.0001.b: "We need a genius of organization and finance."
- 
- # Modifier
- super_courtier_cooldown_modifier: "Summoned a Courtier Recently"
- desc_super_courtier_cooldown_modifier: "You have recently called upon the esoteric arts to summon a courtier. The paths must be allowed to rest before they can be walked again."
